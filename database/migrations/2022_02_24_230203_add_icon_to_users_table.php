@@ -17,8 +17,6 @@ class AddIconToUsersTable extends Migration
             //usersテーブルにiconカラム追加
             $table->string('icon')->default('default_icon.png');
             
-            //外部キー制約
-            $table->foreign('id')->references('user_id')->on('posts');
         });
     }
 
@@ -31,7 +29,6 @@ class AddIconToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('icon'); //カラムの削除
-            $table->dropForeign(['id']); //外部キー制約削除
         });
     }
 }

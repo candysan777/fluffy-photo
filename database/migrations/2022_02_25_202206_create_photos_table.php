@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsTable extends Migration
+class CreatePhotosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('photos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->string('caption');
+            $table->unsignedBigInteger('post_id');
+            $table->string('photo_url');
             $table->timestamps();
-        
-        //外部キー制約
-            $table->foreign('user_id')->references('id')->on('users');
+            
+            //外部キー制約
+            $table->foreign('post_id')->references('id')->on('posts');
         });
-
     }
 
     /**
@@ -32,7 +31,7 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
-        $table->dropForeign('posts_user_id_foreign');
+        Schema::dropIfExists('photos');
+        $table->dropForeign('photos_post_id_foreign'); //外部キーの制約解除
     }
 }
