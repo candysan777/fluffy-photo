@@ -1,0 +1,35 @@
+.all{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    
+}
+
+.bg-primary{
+    background-color : #c7c0b5 !important; 
+    color: #8E806A !important;
+}
+
+.text-secondary{
+    color: #8E806A !important;
+}
+
+
+.bg-info{
+    background-color: #8E806A !important;   
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.btn{
+    color: #8E806A !important;
+}
+
+
+.navbar{
+    font-size: 20;
+}
+
+.navbar-brand{
+    color: white !important;
+    font-size: 80;
+}
+
