@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#8E806A">
         <div class="container-fluid">
             {{-- トップページへのリンク --}}
-            <a class="py-4 navbar-brand" href="/">Fluffy Photo</a>
+            <a class="py-3 navbar-brand" href="/">Fluffy Photo</a>
         
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-bar">
               <span class="navbar-toggler-icon"></span>

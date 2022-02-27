@@ -3,6 +3,11 @@
     
 }
 
+.navbar-brand{
+    color: white !important;
+    font-size: 40;
+}
+
 .bg-primary{
     background-color : #c7c0b5 !important; 
     color: #8E806A !important;
@@ -28,8 +33,12 @@
     font-size: 20;
 }
 
-.navbar-brand{
-    color: white !important;
-    font-size: 80;
+
+.icon{
+    margin-right:10px;
 }
+
+
+
+
 

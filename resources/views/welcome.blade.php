@@ -15,7 +15,31 @@
                 </div>
                 <div class="pt-5 pb-5 text-center text-secondary">
                     <h3>みんなの投稿</h3>
-                    
+                    <div class="container">
+                        <div class="card-deck">
+                          <div class="card">
+                           <img class="card-img-top" src="/images/sample1.jpg" alt="サンプル1">
+                           <div class="card-body">
+                              <h5 class="card-title text-left"><img class="icon" src="/images/default_icon.png" width="50" height="50" alt="アイコン">サンプルユーザー1</h5>
+                              <p class="card-text text-left">コメント1</p>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <img class="card-img-top" src="/images/sample2-1.jpg" alt="サンプル2">
+                            <div class="card-body">
+                              <h5 class="card-title text-left"><img class="icon" src="/images/default_icon.png" width="50" height="50" alt="アイコン">サンプルユーザー2</h5>
+                              <p class="card-text text-left">コメント2</p>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <img class="card-img-top" src="/images/sample3-1.jpg" alt="サンプル3">
+                            <div class="card-body">
+                              <h5 class="card-title text-left"><img class="icon" src="/images/default_icon.png" width="50" height="50" alt="アイコン">サンプルユーザー3</h5>
+                              <p class="card-text text-left">コメント3</p>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
                 </div>
                 <div class="pt-5 pb-5 text-center bg-primary">
                     <ul>さあ、あなたもとっておきの一枚を投稿しませんか。</ul>
@@ -24,10 +48,8 @@
                 </div>
             </div>
         </div>
-        <div id="footer">
-            <div class="bg-info">
-                
-            </div>    
-        </div>
+        <footer class="footer bg-info">
+            <!-- フッター -->
+        </footer>
 
 @endsection
