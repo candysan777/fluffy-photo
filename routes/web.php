@@ -11,6 +11,12 @@
 |
 */
 
+//未ログインの場合はwelcome、ログイン済の場合はindexを表示
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//1.ユーザー登録
+Route::get('signup','Auth\RegisterController@showRegistrationForm')->name('signup.get');
+Route::post('signup','Auth\RegisterController@register')->name('signup.post');
