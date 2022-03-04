@@ -1,5 +1,14 @@
 .all{
     font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #8E806A !important;
+}
+
+.text-secondary{
+    color: #8E806A !important;
+}
+
+.wrapper{
+    min-height:80vh;
 }
 
 .navbar-brand{
@@ -11,15 +20,14 @@
     background-color : #F3F0D1 !important; 
 }
 
-.text-secondary{
-    color: #8E806A !important;
-}
 
 
 .bg-info{
     background-color: #8E806A !important;   
-    padding-top: 50px;
-    padding-bottom: 30px;
+}
+
+.footer{
+    padding-top: 80px;    
 }
 
 .btn{
@@ -32,10 +40,19 @@
 }
 
 
+
 .icon{
     margin-right:10px;
 }
 
+
+a.link-light{
+    color: #8E806A;
+}
+
+a.link-light:hover{
+    color: #E29C68;
+}
 
 
 

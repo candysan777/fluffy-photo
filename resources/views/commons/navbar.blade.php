@@ -10,12 +10,18 @@
             <div class="collapse navbar-collapse" id="nav-bar">
                 <ul class="navbar-nav mr-auto"></ul>
                 <ul class="navbar-nav">
-                    {{-- ユーザ登録ページへのリンク --}}
-                    <li>{!! link_to_route('signup.get','会員登録',[],['class' => 'nav-link']) !!}</li>
-                    {{-- ログインページへのリンク --}}
-                    <li class="nav item">
-                        <a class="nav-link" href="#">ログイン</a>
-                    </li>
+                    @if (Auth::check())
+                        {{-- 投稿ページへのリンク --}}
+                        {{-- 検索ページへのリンク --}}
+                        {{-- ユーザー詳細ページへのリンク --}}
+                        {{-- ログアウトへのリンク --}}
+                        <a href="{!! URL::to('logout') !!}"><img src={!! asset('/images/logout-icon.png') !!} alt="ログアウト"></a>
+                    @else
+                        {{-- ユーザ登録ページへのリンク --}}
+                        <li>{!! link_to_route('signup.get','会員登録',[],['class' => 'nav-link']) !!}</li>
+                        {{-- ログインページへのリンク --}}
+                        <li>{!! link_to_route('login','ログイン',[],['class' => 'nav-link']) !!}</li>          
+                    @endif                
                 </ul>
             </div>
         </div>
