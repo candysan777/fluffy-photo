@@ -11,10 +11,8 @@
 |
 */
 
-//未ログインの場合はwelcome、ログイン済の場合はindexを表示
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'PostsController@index');
 
 
 //1.ユーザー登録
@@ -26,3 +24,12 @@ Route::get('login','Auth\LoginController@showLoginForm')->name('login');
 Route::post('login','Auth\LoginController@login')->name('login.post');
 Route::get('logout','Auth\LoginController@logout')->name('logout.get');
 
+//3.ユーザー詳細、ユーザー編集
+Route::group(['middleware' => ['auth']],function(){
+    Route::resource('users','UsersController',['only' => ['show','edit']]);
+});
+
+//4.投稿一覧、投稿作成
+Route::group(['middleware' => ['auth']],function(){
+   Route::resource('posts','PostsController',['only' => ['index','create','store','destroy']]); 
+});

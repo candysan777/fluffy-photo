@@ -11,15 +11,38 @@
     min-height:80vh;
 }
 
+
+.navbar{
+    font-size: 20;
+}
+
 .navbar-brand{
     color: white !important;
     font-size: 40;
 }
 
+.menu-icon{
+    margin-right:10px;
+    width:48px;
+    height:48px;
+    transition-duration:0.5s;
+}
+
+.memu-icon img{
+    width:100%;
+    cursor: pointer;
+}
+
+.menu-icon:hover{
+    transform: translateY(-5px);
+    transition-duration: 0.3s;
+}
+
+
+
 .bg-primary{
     background-color : #F3F0D1 !important; 
 }
-
 
 
 .bg-info{
@@ -35,13 +58,7 @@
 }
 
 
-.navbar{
-    font-size: 20;
-}
-
-
-
-.icon{
+.menu-icon{
     margin-right:10px;
 }
 
@@ -54,6 +71,8 @@ a.link-light:hover{
     color: #E29C68;
 }
 
-
+.card{
+    border-radius: 0 !important;
+}
 
 

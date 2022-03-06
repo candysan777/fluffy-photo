@@ -15,7 +15,7 @@ class AddIconToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //usersテーブルにiconカラム追加
-            $table->string('icon')->default('default_icon.png');
+            $table->string('icon')->nullable();
             
         });
     }

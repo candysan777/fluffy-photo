@@ -12,10 +12,13 @@
                 <ul class="navbar-nav">
                     @if (Auth::check())
                         {{-- 投稿ページへのリンク --}}
+                        <a class="menu-icon" href="{!! URL::to('/') !!}"><img src={!! asset('/images/post-icon2.png') !!} alt="投稿"></a>
                         {{-- 検索ページへのリンク --}}
+                        <a class="menu-icon ml-3" href="{!! URL::to('/') !!}"><img src={!! asset('/images/search-icon2.png') !!} alt="検索"></a>
                         {{-- ユーザー詳細ページへのリンク --}}
+                        <a class="menu-icon ml-3" href="{!! URL::to('/') !!}"><img src={!! asset('/images/profile-icon2.png') !!} alt="プロフィール"></a>
                         {{-- ログアウトへのリンク --}}
-                        <a href="{!! URL::to('logout') !!}"><img src={!! asset('/images/logout-icon.png') !!} alt="ログアウト"></a>
+                        <a class="menu-icon ml-3" href="{!! URL::to('logout') !!}"><img src={!! asset('/images/logout-icon2.png') !!} alt="ログアウト"></a>
                     @else
                         {{-- ユーザ登録ページへのリンク --}}
                         <li>{!! link_to_route('signup.get','会員登録',[],['class' => 'nav-link']) !!}</li>
