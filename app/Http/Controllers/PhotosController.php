@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Post;
 
-class UsersController extends Controller
+class PhotosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +23,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+     //
     }
 
     /**
@@ -36,7 +34,11 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->posts()->photo_url()->create([
+            'photo' => $request->photo_url,
+            ]);
+            
+           return redirect('posts/create');        
     }
 
     /**
@@ -47,14 +49,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id);
-        
-        $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(10);
-        
-        return view('users.show',[
-                'user' => $user,
-                'posts' => $posts,
-            ]);
+        //
     }
 
     /**

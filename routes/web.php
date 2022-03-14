@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth']],function(){
     Route::resource('users','UsersController',['only' => ['show','edit']]);
 });
 
-//4.投稿一覧、投稿作成
+//4.投稿一覧、投稿作成、削除
 Route::group(['middleware' => ['auth']],function(){
    Route::resource('posts','PostsController',['only' => ['index','create','store','destroy']]); 
 });

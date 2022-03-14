@@ -20,7 +20,7 @@ class CreatePhotosTable extends Migration
             $table->timestamps();
             
             //外部キー制約
-            $table->foreign('post_id')->references('id')->on('posts');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 

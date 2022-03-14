@@ -15,4 +15,14 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
     
+    //この投稿が持つ写真
+    public function photos(){
+        return $this->hasMany(Photo::class);
+    }
+    
+    //この投稿がもつタグ
+    public function tags(){
+        return $this->belongsToMany(Tag::class); 
+    }
+    
 }

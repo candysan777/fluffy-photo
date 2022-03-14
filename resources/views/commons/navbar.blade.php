@@ -1,4 +1,4 @@
-<header class="mt-0">
+<header class="mt-0 sticky-top">
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#8E806A">
         <div class="container-fluid">
             {{-- トップページへのリンク --}}
@@ -12,11 +12,11 @@
                 <ul class="navbar-nav">
                     @if (Auth::check())
                         {{-- 投稿ページへのリンク --}}
-                        <a class="menu-icon" href="{!! URL::to('/') !!}"><img src={!! asset('/images/post-icon2.png') !!} alt="投稿"></a>
+                        <a class="menu-icon" href="{{ route('posts.create',['user' => Auth::id()]) }}"><img src={!! asset('/images/post-icon2.png') !!} alt="投稿"></a>
                         {{-- 検索ページへのリンク --}}
                         <a class="menu-icon ml-3" href="{!! URL::to('/') !!}"><img src={!! asset('/images/search-icon2.png') !!} alt="検索"></a>
                         {{-- ユーザー詳細ページへのリンク --}}
-                        <a class="menu-icon ml-3" href="{!! URL::to('/') !!}"><img src={!! asset('/images/profile-icon2.png') !!} alt="プロフィール"></a>
+                        <a class="menu-icon ml-3" href="{{ route('users.show',['user' => Auth::id()]) }}"><img src={!! asset('/images/profile-icon2.png') !!} alt="プロフィール"></a>
                         {{-- ログアウトへのリンク --}}
                         <a class="menu-icon ml-3" href="{!! URL::to('logout') !!}"><img src={!! asset('/images/logout-icon2.png') !!} alt="ログアウト"></a>
                     @else

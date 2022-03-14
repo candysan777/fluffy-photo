@@ -8,8 +8,21 @@
 }
 
 .wrapper{
-    min-height:80vh;
+    min-height:90vh;
+    position: relative;
+    box-sizing: border-box;
 }
+
+.footer{
+    padding-top: 80px; 
+    bottom: 0;
+}
+
+.bg-info{
+    background-color: #8E806A !important;   
+}
+
+
 
 
 .navbar{
@@ -18,7 +31,7 @@
 
 .navbar-brand{
     color: white !important;
-    font-size: 40;
+    font-size: 30;
 }
 
 .menu-icon{
@@ -38,6 +51,22 @@
     transition-duration: 0.3s;
 }
 
+.destroy-icon{
+    margin-right:10px;
+    width:24px;
+    height:24px;
+    transition-duration:0.5s;
+}
+
+.destroy-icon img{
+    width:100%;
+    cursor: pointer;
+}
+
+.destroy-icon:hover{
+    transform: translateY(-5px);
+    transition-duration: 0.3s;
+}
 
 
 .bg-primary{
@@ -45,13 +74,7 @@
 }
 
 
-.bg-info{
-    background-color: #8E806A !important;   
-}
 
-.footer{
-    padding-top: 80px;    
-}
 
 .btn{
     color: #8E806A !important;
@@ -71,8 +94,6 @@ a.link-light:hover{
     color: #E29C68;
 }
 
-.card{
+.border{
     border-radius: 0 !important;
 }
-
-

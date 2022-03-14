@@ -3,20 +3,13 @@
 
 @section('content')
     @if(Auth::check())
-        <div class="wrapper">
-            <div class="container">
-                <div class="col-sm-6 offset-sm-3">
-                    <ul>
-                        @include('posts.posts')
-                    </ul>                
-                </div>            
-            </div>
-        </div>        
+        <div class="container">
+             @include('posts.posts')
+        </div>
     @else
         <div class="mt-0">
             <img class="img-fluid" src="/images/main_visual1.jpg">
         </div>
-        <div class="wrapper">
             <div class="main">
                <div class="pt-5 pb-5 text-center bg-primary">
                     <h1>About Fluffy Photo</h1>
@@ -38,7 +31,7 @@
                           <div class="card shadow">
                             <img class="card-img-top" src="/images/sample2-1.jpg" alt="サンプル2">
                             <div class="card-body">
-                              <h5 class="card-title text-left"><img class="icon" src="/images/default_icon.png" width="50" height="50" alt="アイコン">サンプルユーザー2</h5>
+                              <h5 class="card-title text-left ml-2"><img class="icon" src="/images/default_icon.png" width="50" height="50" alt="アイコン">サンプルユーザー2</h5>
                               <p class="card-text text-left">コメント2</p>
                             </div>
                           </div>
@@ -55,13 +48,8 @@
                 <div class="pt-5 pb-5 text-center bg-primary">
                     <ul>さあ、あなたもとっておきの一枚を投稿しませんか。</ul>
                     {!! link_to_route('signup.get','会員登録',[],['class' => 'btn btn-light btn-lg']) !!}
-                    {!! link_to_route('login','ログイン',[],['class' => 'btn btn-light btn-lg']) !!}
+                    {!! link_to_route('login','ログイン',[],['class' => 'btn btn-light btn-lg ml-5']) !!}
                 </div>
             </div>
-        </div>
     @endif
-    <footer class="footer bg-info">
-        <!-- フッター -->
-    </footer>
-
 @endsection
