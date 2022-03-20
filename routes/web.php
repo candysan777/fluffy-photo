@@ -29,7 +29,9 @@ Route::group(['middleware' => ['auth']],function(){
     Route::resource('users','UsersController',['only' => ['show','edit']]);
 });
 
-//4.投稿一覧、投稿作成、削除
+//4.投稿一覧、投稿作成、削除、検索
 Route::group(['middleware' => ['auth']],function(){
-   Route::resource('posts','PostsController',['only' => ['index','create','store','destroy']]); 
+   Route::resource('posts','PostsController',['only' => ['index','show','create','store','destroy']]); 
+   Route::get('search','PostsController@search')->name('post.search');
 });
+

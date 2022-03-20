@@ -1,4 +1,4 @@
-.all{
+body{
     font-family: 'M PLUS Rounded 1c', sans-serif;
     color: #8E806A !important;
 }
@@ -7,14 +7,19 @@
     color: #8E806A !important;
 }
 
+
+.header{
+ min-height:10vh;   
+}
+
 .wrapper{
-    min-height:90vh;
+    min-height:80vh;
     position: relative;
     box-sizing: border-box;
 }
 
 .footer{
-    padding-top: 80px; 
+    min-height:10vh;
     bottom: 0;
 }
 
@@ -96,4 +101,8 @@ a.link-light:hover{
 
 .border{
     border-radius: 0 !important;
+}
+
+.search-form{
+    margin-right: 10px;
 }

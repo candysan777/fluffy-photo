@@ -95,7 +95,7 @@ class PostsController extends Controller
       //ハッシュタグ
         
         // #(ハッシュタグ)で始まる単語を取得。結果は、$matchに多次元配列で代入される。
-        preg_match_all('/#([a-zA-z0-9０-９ぁ-んァ-ヶ亜-熙]+)/u', $request->tags, $match);
+        preg_match_all('/#([a-zA-Z0-9０-９ぁ-んァ-ヶ亜-熙]+)/u', $request->tags, $match);
         // $match[0]に#(ハッシュタグ)あり、$match[1]に#(ハッシュタグ)なしの結果が入ってくるので、$match[1]で#(ハッシュタグ)なしの結果のみを使います。
         $tags = [];
         foreach ($match[1] as $tag) {
@@ -124,7 +124,11 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        
+         return view('posts.show', [
+            'post' => $post,
+        ]);
     }
 
     /**
@@ -162,10 +166,36 @@ class PostsController extends Controller
         
         if (\Auth::id() === $post->user_id) {
             $post->delete();
-            
         }
         
         return back();
         
     }
+    
+    
+    public function search(Request $request)
+    {   
+         $posts = [];
+        
+        if(\Auth::check()){
+            //検索フォームで入力された値
+            $keyword = $request->input("keyword");
+            
+            if($request->filled('keyword')){
+                //Postモデルから全件取得
+                $query = Post::query()->orderBy('created_at','desc');
+                //Postモデルのリレーション先であるtagsテーブルから、フォームに入力された値($keyword)をもとに検索
+                $posts = Post::whereHas('tags', function ($query) use ($keyword) {
+                    $query->where('name', 'LIKE', "%{$keyword}%");
+                })->get();
+            }
+            
+                
+            return view("posts.search", [
+                "posts" => $posts, 
+                "keyword" => $keyword
+                ]);
+        }
+    }
+    
 }

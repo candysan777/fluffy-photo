@@ -13,8 +13,7 @@
         </head>
         
         <body>
-            <div class="all">
-                <div class="wrapper">
+                
                 {{--　ナビゲーションバー --}}
                 @include('commons.navbar')
                 
@@ -24,8 +23,8 @@
                 
                     @yield('content')
             
-                </div>
-            </div>
+                
+
             <footer class="footer bg-info">
                 <!-- フッター -->
             </footer>
