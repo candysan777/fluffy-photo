@@ -51,7 +51,7 @@ class UsersController extends Controller
         
         $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(10);
         
-        return view('users.show',[
+        return view('users.user_show',[
                 'user' => $user,
                 'posts' => $posts,
             ]);

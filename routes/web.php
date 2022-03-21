@@ -33,5 +33,6 @@ Route::group(['middleware' => ['auth']],function(){
 Route::group(['middleware' => ['auth']],function(){
    Route::resource('posts','PostsController',['only' => ['index','show','create','store','destroy']]); 
    Route::get('search','PostsController@search')->name('post.search');
+   //Route::get(tag_search'@PostsController@tag_search')->name('post.tag_search')
 });
 

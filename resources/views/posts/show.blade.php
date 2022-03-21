@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container">
       <div class="my-5 card border border-1 mx-auto" style="max-width: 500px">
+        @foreach($post->photos as $photo)
               <img class="card-img-top" src="{{ $photo->photo_url }}" alt="">
+        @endforeach
             <div class="card-body">
               <div class="d-flex justify-content-between"> 
                 <div class="justify-content-start">
@@ -10,7 +13,7 @@
                   <!-- ユーザーのアイコンがnullだったらデフォルトアイコンを表示する -->
                   <img class="mt-0" src="{!! is_null($user->icon) ? asset('/images/default_icon.png') : $user->icon !!}" width="40" height="40">
                   <!-- ユーザー名 -->
-                 {!! link_to_route('users.show',$post->user->name,['user' => 'user_id'],['class' => 'pl-2 link-light text-decoration-none align-middle']) !!}
+                 {!! link_to_route('users.show',$post->user->name,['user' => $post->user->id],['class' => 'pl-2 link-light text-decoration-none align-middle']) !!}
                 </div>
                 <div class="justify-content-end">
                   <!-- 削除ボタン -->
@@ -23,11 +26,11 @@
               </div>
             <!-- キャプション -->
             <p class="card-text text-left mt-3">{!! nl2br(e($post->caption)) !!}</p>
+            @foreach ($post->tags as $tag)
             <!-- ハッシュタグ -->
-              {!! link_to_route('posts.index','#'.$tag->name,[],['class' => 'pl-2 link-light text-decoration-none align-middle']) !!}
+              {!! link_to_route('post.search','#'.$tag->name,['keyword' => $tag->name],['class' => 'pl-2 link-light text-decoration-none align-middle']) !!}
+            @endforeach
             </div>
       </div>
-@endforeach
-
-
+    </div>
 @endsection

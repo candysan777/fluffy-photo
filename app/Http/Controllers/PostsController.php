@@ -22,7 +22,7 @@ class PostsController extends Controller
         
         if(\Auth::check()){  //認証済みの場合
             $user = \Auth::user();
-            $posts = Post::orderBy('created_at','desc')->get(); 
+            $posts = $user->posts()->orderBy('created_at','desc')->get(); 
             //$posts = $allpost->sortByDesc('created_at'); 取得したデータを日付の降順に並べ替え
             
             
@@ -125,9 +125,13 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
-        
+        $user = $post->user()->first();
+        $tags = $post->tags()->get();
+       
          return view('posts.show', [
             'post' => $post,
+            'user' => $user,
+            'tags' => $tags,
         ]);
     }
 
@@ -189,13 +193,13 @@ class PostsController extends Controller
                     $query->where('name', 'LIKE', "%{$keyword}%");
                 })->get();
             }
-            
-                
+  
             return view("posts.search", [
                 "posts" => $posts, 
-                "keyword" => $keyword
+                "keyword" => $keyword,
                 ]);
         }
     }
+    
     
 }

@@ -13,19 +13,19 @@
         </head>
         
         <body>
-                
+            <header class="header mt-0 sticky-top">
                 {{--　ナビゲーションバー --}}
                 @include('commons.navbar')
-                
-                
+            </header>
+            
+            <div class="wrapper">
                     {{--　エラーメッセージ --}}
                     @include('commons.error_messages')
                 
                     @yield('content')
-            
-                
 
-            <footer class="footer bg-info">
+            </div>
+            <footer class="bg-info">
                 <!-- フッター -->
             </footer>
                 

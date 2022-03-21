@@ -12,7 +12,7 @@
                           <!-- ユーザーのアイコンがnullだったらデフォルトアイコンを表示する -->
                           <img class="mt-0" src="{!! is_null($user->icon) ? asset('/images/default_icon.png') : $user->icon !!}" width="40" height="40">
                           <!-- ユーザー名 -->
-                         {!! link_to_route('users.show',$post->user->name,['user' => 'user_id'],['class' => 'pl-2 link-light text-decoration-none align-middle']) !!}
+                         {!! link_to_route('users.show',$post->user->name,['user' => Auth::id()],['class' => 'pl-2 link-light text-decoration-none align-middle']) !!}
                         </div>
                         <div class="justify-content-end">
                           <!-- 削除ボタン -->
@@ -27,7 +27,7 @@
                     <p class="card-text text-left mt-3">{!! nl2br(e($post->caption)) !!}</p>
                     <!-- ハッシュタグ -->
                     @foreach($post->tags as $tag)
-                      {!! link_to_route('posts.index','#'.$tag->name,[],['class' => 'pl-2 link-light text-decoration-none align-middle']) !!}
+                      {!! link_to_route('post.search','#'.$tag->name,['keyword' => $tag->name],['class' => 'pl-2 link-light text-decoration-none align-middle']) !!}
                     @endforeach
                     </div>
               </div>

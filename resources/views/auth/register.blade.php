@@ -2,6 +2,7 @@
 @extends('layouts.app') 
 
 @section('content') 
+
     <div class="wrapper bg-primary">
         <div class="col-sm-6 offset-sm-3"> 
             <div class="main">
@@ -38,8 +39,6 @@
                 </div>
             </div>
         </div>
-        <footer class="footer bg-info">
-            <!-- フッター -->
-        </footer>
+
     </div>
 @endsection
